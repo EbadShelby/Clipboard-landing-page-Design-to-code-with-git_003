@@ -3,8 +3,6 @@
   --clr-primary-500: hsl(171, 66%, 44%);
   --clr-primary-700: hsl(233, 100%, 69%);
 
-  --clr-accent-800: ;
-
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-300: hsl(201, 11%, 66%);
   --clr-neutral-500: hsl(210, 10%, 33%);
@@ -92,6 +90,12 @@ h6 {
 /* ========|| General Styling ||========= */
 body {
   font-family: var(--ff-base);
+}
+h1, h2, h3, li {
+  color: var(--clr-neutral-500);
+}
+p {
+  color: var(--clr-neutral-300);
 }
 /* ==========|| Main Styling ||========== */
 
