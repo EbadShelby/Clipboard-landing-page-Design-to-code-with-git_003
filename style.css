@@ -251,6 +251,8 @@ p {
   .page__buttons {
     flex-direction: row;
     gap: 0;
+    max-width: 40em;
+    margin-inline: auto;
   }
   .partners__logos {
     grid-template-columns: repeat(3, 1fr);
@@ -271,6 +273,7 @@ p {
   .footer {
     flex-direction: row;
     justify-content: center;
+    align-items: center;
   }
   .footer__socials {
     display: flex;
