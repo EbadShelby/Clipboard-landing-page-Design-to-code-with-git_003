@@ -12,7 +12,7 @@
 
   --ff-base: "Bai Jamjuree", sans-serif;
 
-  --spacing-xsmall: .25rem;
+  --spacing-xsmall: 0.25rem;
   --spacing-small: 0.5em;
   --spacing-regular: 1em;
   --spacing-semi-medium: 1.5em;
@@ -23,9 +23,9 @@
   --spacing-xxlarge: 8em;
   --spacing-xxxlarge: 10em;
 
-  --fs-300: .8125rem;
-  --fs-400: .875rem;
-  --fs-500: .9375rem;
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
   --fs-600: 1rem;
   --fs-base: 1.125rem;
   --fs-650: 1.5625rem;
@@ -77,7 +77,6 @@ select {
 }
 p {
   overflow-wrap: break-word;
-  max-width: 75ch;
   text-wrap: pretty; /*prevent alone words*/
   line-height: 1.5;
 }
@@ -98,7 +97,9 @@ body {
   font-size: var(--fs-base);
   text-align: center;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--clr-neutral-500);
   margin-bottom: var(--spacing-small);
   font-weight: var(--fw-bold);
@@ -109,9 +110,6 @@ h2 {
 h3 {
   font-size: var(--fs-650);
 }
-li {
-  color: var(--clr-neutral-500);
-}
 p {
   color: var(--clr-neutral-300);
 }
@@ -119,16 +117,14 @@ p {
 /* ==========|| Main Styling ||========== */
 .page {
   padding-inline: var(--spacing-medium);
+  display: grid;
+  place-content: center;
+  margin-inline: auto;
+
 }
 .page__logo {
   width: 7.5em;
   padding-block: var(--spacing-xxlarge) var(--spacing-semi-large);
-}
-.page__header {
-  background: url(images/bg-header-mobile.png) no-repeat fixed top;
-  background-size: contain;
-  margin-inline: calc(-2em); /*escape bg to the wrapper*/
-  width: calc(100% + 4em);
 }
 .page__buttons {
   display: flex;
@@ -143,7 +139,7 @@ p {
   color: var(--clr-neutral-100);
   font-weight: var(--fw-bold);
   border-radius: 100vh;
-  box-shadow: inset 0px -2px 0px 1px rgba(0,0,0,0.2);
+  box-shadow: inset 0px -2px 0px 1px hsla(0, 0%, 0%, 0.2);
 }
 .feature__wrapper {
   margin-bottom: 4.5em;
@@ -178,6 +174,37 @@ p {
   place-content: center;
   gap: 4em;
 }
+.footer {
+  background-color: hsl(from var(--clr-neutral-300) h s l / 0.1);
+  display: flex;
+  padding: 4em;
+  flex-direction: column;
+  gap: 3em;
+}
+.footer__logo {
+  width: 3em;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+.footer__link {
+  list-style: none;
+  font-weight: var(--fw-bold);
+  color: hsl(from var(--clr-neutral-500) h s l / 0.7);
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+.footer__social-icon {
+  height: 2em;
+}
+.feature__col {
+  display: grid;
+}
 /* ============|| Utilities ||=========== */
 .button--green {
   background-color: var(--clr-primary-500);
@@ -186,3 +213,77 @@ p {
   background-color: var(--clr-primary-700);
 }
 /* ===========|| Breakpoints ||========== */
+/* xs */
+@media (min-width: 475px) {
+  .page {
+    max-width: 29.6875em;
+  }
+}
+/* sm */
+@media (min-width: 600px) {
+  .page {
+    max-width: 37.5em;
+  }
+}
+/* md */
+@media (min-width: 768px) {
+  .page {
+    max-width: 48em;
+  }
+  .partners__logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .partners {
+    margin-inline: auto;
+  }
+
+  .footer__links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+}
+/* lg */
+@media (min-width: 1024px) {
+  .page {
+    max-width: 64em;
+  }
+  .page__buttons {
+    flex-direction: row;
+    gap: 0;
+  }
+  .partners__logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .feature__col {
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+}
+/* xl */
+@media (min-width: 1280px) {
+  .page {
+    max-width: 80em;
+  }
+  .partners__logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+  }
+}
+/* 2xl */
+@media (min-width: 1536px) {
+  .page {
+    max-width: 96em;
+  }
+  .partners__logos {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
