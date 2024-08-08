@@ -17,7 +17,9 @@
   --spacing-regular: 1em;
   --spacing-medium: 2em;
   --spacing-large: 3em;
+  --spacing-semi-large: 4em;
   --spacing-xlarge: 6em;
+  --spacing-xxlarge: 8em;
 
   --fs-300: 0.8125rem;
   --fs-400: 0.875rem;
@@ -93,14 +95,30 @@ body {
   font-size: var(--fs-base);
   text-align: center;
 }
-h1, h2, h3, li {
+h1, h2, h3 {
+  color: var(--clr-neutral-500);
+  margin-bottom: var(--spacing-small);
+}
+li {
   color: var(--clr-neutral-500);
 }
 p {
   color: var(--clr-neutral-300);
 }
 /* ==========|| Main Styling ||========== */
-
+.page {
+  padding-inline: var(--spacing-medium);
+}
+.page__logo {
+  width: 7.5em;
+  padding-block: var(--spacing-xxlarge) var(--spacing-semi-large);
+}
+.page__header {
+  background: url(images/bg-header-mobile.png) no-repeat fixed top;
+  background-size: contain;
+  margin-inline: calc(-2em); /*escape bg to the wrapper*/
+  width: calc(100% + 4em);
+}
 /* ============|| Utilities ||=========== */
 
 /* ===========|| Breakpoints ||========== */
